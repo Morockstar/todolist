@@ -34,3 +34,4 @@ function onTodolistClicked(event) {
 
 // step 3: Link element, function and event 
 addTaskButton.addEventListener('click', onAddTaskClicked)
+todoListContainer.addEventListener('click', onTodolistClicked);
