@@ -11,32 +11,29 @@
 
 <body>
     <h1>My Todo List</h1>
+  <form>
+    <label>
+      Task Name:
+      <input id="task-input" type="text" placeholder="Do assignment">
+    </label>
+    <button type="button" id="add-task">
+      Add Task
+    </button>
+  </form>
+  <ul id="todo-list">
+  </ul>
 
-    <form>
-        <label>
-            Task Name: 
-            <input id="task-input" type="text" placeholder="Do Assignment">
-        </label>
-        <button id="add-task" type="button">
-            Add Task
-        </button>
-    </form>
+ 
+  <script type="text/template" id="list-item-template">
+    <li class="task">
+      <label>
+        <input class="checkbox" type="checkbox">
+        <!-- TASK_NAME -->
+      </label>
+    </li>
+  </script>
 
-    <u1>
-        <li>
-            <label>
-                <input type="checkbox">
-                Build Website
-            </label>
-        </li>
-        <li>
-            <label>
-                <input type="checkbox">
-                Do Something Else
-            </label>
-        </li>
-    </u1>
-    <script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
