@@ -3,6 +3,9 @@ let addTaskButton = document.getElementById("add-task")
 let newTaskInput = document.getElementById("task-input")
 let todoListContainer = document.getElementById("todo-list");
 
+let templateElement = document.getElementById("list-item-template");
+let template = templateElement.innerHTML;
+
 
 // Step 2: Write a function to implement the behaviour 
 function onAddTaskClicked(event) {
