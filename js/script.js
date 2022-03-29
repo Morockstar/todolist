@@ -11,7 +11,8 @@ let template = templateElement.innerHTML;
 function onAddTaskClicked(event) {
     let taskName = newTaskInput.value;
     newTaskInput.value = "";
-    console.log(taskName)
+    let taskHTML = template.replace("<!-- TASK_NAME -->", taskName);
+    todoListContainer.insertAdjacentHTML('beforeend', taskHTML);
 }
 
 
