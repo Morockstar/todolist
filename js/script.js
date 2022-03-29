@@ -22,6 +22,14 @@ function onTodolistClicked(event) {
         targetElement = targetElement.parentElement;
     }
 
+    let checkbox = targetElement.querySelector(".checkbox");
+
+    if (checkbox.checked) {
+        targetElement.classList.add("completed");
+    } else {
+        targetElement.classList.remove("completed");
+    }
+}
 
 
 // step 3: Link element, function and event 
