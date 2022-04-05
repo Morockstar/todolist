@@ -14,13 +14,25 @@ function saveTask(name,isCompleted){
     localStorage.setItem(name, isCompleted)
 }
 
-
+function renderTasks() {
+    for (let i=0; i < localStorage.length; i++;){
+        let taskName = localStorage.key(i);
+        let isCompleted = localStorage.getItem(taskName) == "true"
+        let taskHTML = template.replace("<!-- TASK_NAME -->", taskName);
+        
+        if (!isCompleted){
+            todoListContainer.insertAdjacentHTML('beforeend', taskHTML);
+        }
+    }
+}
 
 function onAddTaskClicked(event) {
     let taskName = newTaskInput.value;
     newTaskInput.value = "";
     let taskHTML = template.replace("<!-- TASK_NAME -->", taskName);
     todoListContainer.insertAdjacentHTML('beforeend', taskHTML);
+
+    saveTask(taskName, false)
 }
 
 function onTodolistClicked(event) {
@@ -64,3 +76,4 @@ addTaskButton.addEventListener('click', onAddTaskClicked);
 todoListContainer.addEventListener('click', onTodolistClicked);
 showActiveButton.addEventListener('click', showActiveTasks);
 showAllButton.addEventListener('click', showActiveTasks);
+renderTasks();
