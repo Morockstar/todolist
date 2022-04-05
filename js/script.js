@@ -10,6 +10,12 @@ let template = templateElement.innerHTML;
 
 
 // Step 2: Write a function to implement the behaviour 
+function saveTask(name,isCompleted){
+    localStorage.setItem(name, isCompleted)
+}
+
+
+
 function onAddTaskClicked(event) {
     let taskName = newTaskInput.value;
     newTaskInput.value = "";
