@@ -2,6 +2,7 @@
 let addTaskButton = document.getElementById("add-task")
 let newTaskInput = document.getElementById("task-input")
 let todoListContainer = document.getElementById("todo-list");
+let showActiveButton = document.getElementById("show-active")
 
 let templateElement = document.getElementById("list-item-template");
 let template = templateElement.innerHTML;
@@ -28,6 +29,17 @@ function onTodolistClicked(event) {
         targetElement.classList.add("completed");
     } else {
         targetElement.classList.remove("completed");
+    }
+}
+
+function showActiveTasks(){
+    let tasks = document.getElementsByClassName("task")
+    for (let i =0;i < tasks.length; i++){
+        if (tasks [i].classList.contains("completed")){
+            tasks [i].style.display = "none"
+        } else {
+
+        }
     }
 }
 
